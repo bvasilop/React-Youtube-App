@@ -1,11 +1,15 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './VideoItem.css';
 
 const VideoItem = ({ video, onVideoSelect }) => (
-  <div onClick={() => onVideoSelect(video)} className="video-item item">
+  <div
+    onClick={() => onVideoSelect(video)}
+    onKeyDown={onVideoSelect}
+    role="button"
+    tabIndex="0"
+    className="video-item item"
+  >
     <img
       className="ui image"
       alt={video.snippet.title}
@@ -16,5 +20,10 @@ const VideoItem = ({ video, onVideoSelect }) => (
     </div>
   </div>
 );
+
+VideoItem.propTypes = {
+  video: PropTypes.object,
+  onVideoSelect: PropTypes.func,
+};
 
 export default VideoItem;

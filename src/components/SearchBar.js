@@ -1,7 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-for */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-
 import PropTypes from 'prop-types';
 
 class SearchBar extends React.Component {
@@ -24,8 +21,10 @@ class SearchBar extends React.Component {
       <div className="search-bar ui segment">
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
-            <label>Video Search</label>
-            <input type="text" value={term} onChange={this.onInputChange} />
+            <label htmlFor="Video Search" id="videoSearch">
+              Video Search
+              <input type="text" value={term} onChange={this.onInputChange} />
+            </label>
           </div>
         </form>
       </div>
