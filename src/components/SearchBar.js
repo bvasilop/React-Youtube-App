@@ -1,9 +1,8 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+
+import PropTypes from 'prop-types';
 
 class SearchBar extends React.Component {
   state = { term: '' };
@@ -15,7 +14,8 @@ class SearchBar extends React.Component {
   onFormSubmit = event => {
     event.preventDefault();
     const { term } = this.state;
-    this.props.onFormSubmit(term);
+    const { onFormSubmit } = this.props;
+    onFormSubmit(term);
   };
 
   render() {
@@ -32,5 +32,9 @@ class SearchBar extends React.Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  onFormSubmit: PropTypes.func,
+};
 
 export default SearchBar;
