@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-
+import Scroll from './Scroll';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';
 import youtube from '../apis/youtube';
@@ -30,7 +30,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { videos, comments, selectedVideo } = this.state;
+    const { videos, selectedVideo } = this.state;
     return (
       <div className="ui container">
         <SearchBar onFormSubmit={this.onTermSubmit} />
@@ -40,11 +40,9 @@ class App extends React.Component {
               <VideoDetail video={selectedVideo} />
             </div>
             <div className="sixteen wide mobile sixteen wide tablet five wide computer column">
-              <VideoList
-                onVideoSelect={this.onVideoSelect}
-                videos={videos}
-                comments={comments}
-              />
+              <Scroll>
+                <VideoList onVideoSelect={this.onVideoSelect} videos={videos} />
+              </Scroll>
             </div>
           </div>
         </div>
