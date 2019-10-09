@@ -1,0 +1,227 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body.light-mode {
+  background-color: #fff !important;
+  color: #333 !important;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #10171d !important;
+  color: #dfdfdf !important;
+  transition: background-color 0.3s ease;
+
+  .navbar {
+    background-color: #1b2938 !important;
+  }
+
+  .dark-mode-toggle > button {
+    color: #999 !important;
+    &:last-child {
+      color: lightblue !important;
+    }
+  }
+  .ui.form .field > label,
+  .ui.header:first-child,
+  .ui.list > .item .header,
+  .ui.segment,
+  .ui.button,
+  .ui.form textarea,
+  input {
+    background-color: #19232d !important;
+    color: #dfdfdf !important;
+  }
+  .ui.form input[type='text'] {
+    box-shadow: 0 0px 6px 0 #dfdfdf, 0 2px 10px 0 rgba(34, 36, 38, 0.1);
+  }
+  .ui.form textarea {
+    border: 1px solid rgba(239, 245, 250, 0.15);
+  }
+  .scroll {
+    box-shadow: 0 0px 6px 0 #dfdfdf, 0 2px 10px 0 rgba(34, 36, 38, 0.1);
+    background-color: #19232d !important;
+    border: none;
+  }
+
+  .ui.center.aligned.header,
+  p {
+    color: #dfdfdf !important;
+  }
+  .content button {
+    background-color: #dfdfdf !important;
+    color: #666 !important;
+    box-shadow: 0 2px 4px 0 rgb(223, 223, 223),
+      0 2px 10px 0 rgba(34, 36, 38, 0.15);
+  }
+}
+
+.ui.divided.list > .item {
+  border-top: 1px solid #414951;
+}
+
+.ui .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: #95d3ff;
+  padding: 20px;
+}
+
+.content {
+  padding: 1% 0;
+  margin: 0 auto;
+  // margin-top: 60px;
+  max-width: 1125px;
+  // font-size: 1rem;
+  line-height: 1.3em;
+
+  h1 {
+    // font-size: 2.1rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  code {
+    background-color: #cbe9ff;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 0 5px;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  button {
+    background-color: #19232d !important;
+    border-radius: 0.5rem;
+    color: #dfdfdf !important;
+    box-shadow: 0 2px 4px 0 rgb(223, 223, 223),
+      0 2px 10px 0 rgba(34, 36, 38, 0.15);
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .header {
+    margin: 0 auto !important;
+    margin-bottom: 0rem !important;
+  }
+}
+
+body.dark-mode .content code {
+  background-color: #1b2938;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  & > button {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: #ffe600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:last-child {
+      color: #666 !important;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.toggle-control {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox'].dmcheck {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+
+  &:checked + label {
+    left: 30px !important;
+  }
+
+  &:focus-visible {
+    outline: solid 2px white !important;
+  }
+
+  & + label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 2px;
+    background: #fff;
+    opacity: 0.9;
+    background-color: #f6f6f6 !important;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 411px) {
+  .content p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+  .content h1 {
+    margin-top: 0rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+  }
+  body.dark-mode p {
+    font-size: 1.2rem;
+  }
+  .ui.padded.segment {
+    padding: 0;
+  }
+  .ui.container {
+    width: auto !important;
+    margin-left: 0.3em !important;
+    margin-right: 0.3em !important;
+  }
+
+  .ui.form {
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .ui.header {
+    margin: 0;
+  }
+
+  h1:last-child {
+    display: none;
+  }
+
+  p:nth-child(2) {
+    display: none;
+  }
+}
